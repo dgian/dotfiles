@@ -1,4 +1,8 @@
-require("my.packer")
-require("my.opts")
-require("my.remap")
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
+require("my.lazy")
+require("my.config.opts")
+require("my.config.remap")
+
+vim.cmd.colorscheme "kanagawa"

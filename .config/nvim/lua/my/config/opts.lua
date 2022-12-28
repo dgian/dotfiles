@@ -11,6 +11,8 @@ opt.sts = 4
 opt.sw = 4
 opt.et = true
 
+-- opt.cb = "unnamedplus"
+
 -- backups and undo
 opt.swf = false
 opt.bk = false
@@ -30,5 +32,3 @@ opt.cc = "120"
 -- leader key
 vim.g.mapleader = " "
 
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
