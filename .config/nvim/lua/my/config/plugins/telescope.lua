@@ -6,22 +6,35 @@ local function git_files()
     require("telescope.builtin").git_files()
 end
 
-local function find_symbols()
+local function find_everywhere()
     require("telescope.builtin").grep_string({
-        search = vim.fn.input("Grep > ") 
-    }) 
+        search = vim.fn.input("Grep > ")
+    })
+end
+
+local function find_open_file()
+    require("telescope.builtin").buffers({
+        ignore_current_buffer = true,
+        sort_mru = true,
+    })
+end
+
+local function find_command()
+    require("telescope.builtin").commands()
 end
 
 return {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.0",                            -- or  , branch = "0.1.x",
-    dependencies = { 
-        {"nvim-lua/plenary.nvim"} 
+    dependencies = {
+        {"nvim-lua/plenary.nvim"}
     },
     keys = {
-        { "<leader>ff", find_files, desc = "Find in files" },
-        { "<leader>gf", git_files, desc = "Find in git-tracked files" },
-        { "<leader>fs", find_symbols, desc = "Find symbol everywhere" }
+        { "<leader>ff", find_files, desc = "[F]ind [F]ile" },
+        { "<leader>fo", find_open_file, desc = "[F]ind [O]pen file" },
+        { "<leader>fg", git_files, desc = "[F]ind [G]it-tracked file" },
+        { "<leader>fc", find_command, desc = "[F]ind [C]ommand" },
+        { "<leader><space>f", find_everywhere, desc = "[F]ind everywhere" }
     },
     config = function()
         -- local actions = require("telescope.actions")
@@ -52,11 +65,17 @@ return {
                 selection_caret = " ",
                 winblend = borderless and 0 or 10,
             },
-           -- pickers = {
-           --     find_files = {
-           --         theme = "cursor",
-           --     }
-           -- },
+            pickers = {
+                find_files = {
+                    theme = "ivy",
+                },
+                git_files = {
+                    theme = "ivy",
+                },
+                buffers = {
+                    theme = "ivy",
+                }
+            },
         })
 --        telescope.load_extension("fzf")
     end,
