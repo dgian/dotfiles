@@ -6,3 +6,4 @@ dotfiles_repo
 .npm
 .jdks
 .ssh
+.config/Bitwarden
