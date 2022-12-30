@@ -1,1 +1,8 @@
 dotfiles_repo
+.cache
+.cargo
+.gradle
+.m2
+.npm
+.jdks
+.ssh

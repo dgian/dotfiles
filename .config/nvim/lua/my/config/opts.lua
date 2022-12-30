@@ -29,6 +29,9 @@ opt.so = 10
 -- ruler
 opt.cc = "120"
 
+opt.cul = true
+opt.scl = "auto:4"
+
 -- leader key
 vim.g.mapleader = " "
 
