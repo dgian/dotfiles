@@ -1,0 +1,11 @@
+sourceSets {
+    main {
+        output.resourcesDir = file('bin/main')
+        java.destinationDirectory.set(file('bin/main'))
+    }
+    integration {
+        output.resourcesDir = file('bin/test')
+        java.destinationDirectory.set(file('bin/test'))
+    }
+}
+
