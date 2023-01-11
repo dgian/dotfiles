@@ -20,7 +20,7 @@ return {
             }
             require("kanagawa").setup({
                 overrides = overrides,
-                transparent = false,
+                transparent = true,
             })
         end
     },
