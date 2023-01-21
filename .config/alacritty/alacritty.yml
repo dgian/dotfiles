@@ -43,5 +43,12 @@ font:
     family: JetBrainsMonoNL NFM
     style: Bold
 
+draw_bold_text_with_bright_color: true
+
 window:
   opacity: 0.95
+  padding:
+    x: 2
+    y: 8
+
+live_config_reload: true
