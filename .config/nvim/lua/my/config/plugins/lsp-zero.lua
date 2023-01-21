@@ -56,5 +56,14 @@ return {
             severity_sort = true,
         })
 
+        require("cmp").setup({
+            sources = {
+                { name = "nvim_lsp" },
+                { name = "luasnip" },
+                { name = "orgmode" },
+            }
+        })
+        require("my.config.snippets")
+
     end
 }

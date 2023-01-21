@@ -35,3 +35,5 @@ opt.scl = "auto:4"
 -- leader key
 vim.g.mapleader = " "
 
+vim.wo.wrap = false
+
