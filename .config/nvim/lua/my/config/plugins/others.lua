@@ -21,4 +21,13 @@ return {
             })
         end,
     },
+    { "echasnovski/mini.surround",
+        version = "*",
+        event = "VimEnter",
+        config = function ()
+            require("mini.surround").setup()
+            local key = vim.keymap.set
+            key("n", "<leader>i]", "saiw]")
+        end
+    },
 }
