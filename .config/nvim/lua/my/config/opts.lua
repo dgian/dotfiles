@@ -32,6 +32,18 @@ opt.cc = "120"
 opt.cul = true
 opt.scl = "auto:4"
 
+opt.ls = 3
+opt.list = true
+opt.lcs = {
+    trail = "␣",
+    tab = ">-",
+}
+
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = { "*" },
+  command = [[%s/\s\+$//e]],
+})
+
 -- leader key
 vim.g.mapleader = " "
 

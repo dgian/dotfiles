@@ -44,7 +44,10 @@ local config = {
     end,
 
     init_options = {
-        bundles = bundles
+        bundles = bundles,
+        extendedClientCapabilities = {
+            classFileContentsSupport = true
+        };
     },
 
     settings = {
@@ -73,7 +76,7 @@ local config = {
                 },
             };
             format = {
-                enabled = false,
+                enabled = true,
                 settings = {
                     url = "https://bitbucket.org/gangsplit/ide-settings/raw/master/eclipse-java-google-style.xml",
                 }
@@ -97,7 +100,6 @@ local config = {
                 },
             };
             -- contentProvider = { preferred = "fernflower" },
-            -- extendedClientCapabilities = extendedClientCapabilities,
             sources = {
                 organizeImports = {
                     starThreshold = 9999,

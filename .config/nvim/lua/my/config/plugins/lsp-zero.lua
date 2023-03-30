@@ -36,7 +36,7 @@ return {
         lsp.ensure_installed ({
             "tsserver",
             "eslint",
-            "sumneko_lua",
+            "lua_ls",
             "rust_analyzer",
             "jdtls",
         })
@@ -44,7 +44,7 @@ return {
         lsp.setup_servers({
             "tsserver",
             "eslint",
-            "sumneko_lua",
+            "lua_ls",
             "rust_analyzer",
         })
 
@@ -58,5 +58,8 @@ return {
 
         require("my.config.snippets")
 
+        local cmp = require("cmp")
+        local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+        cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
     end
 }

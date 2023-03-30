@@ -23,18 +23,25 @@ local function find_command()
     require("telescope.builtin").commands()
 end
 
+local function find_lsp_references()
+    require("telescope.builtin").lsp_references()
+end
+
 return {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.0",                            -- or  , branch = "0.1.x",
     dependencies = {
-        {"nvim-lua/plenary.nvim"}
+        {"nvim-lua/plenary.nvim"},
+        {"nvim-telescope/telescope-fzy-native.nvim"},
     },
     keys = {
         { "<leader>ff", find_files, desc = "[F]ind [F]ile" },
         { "<leader>fo", find_open_file, desc = "[F]ind [O]pen file" },
         { "<leader>fg", git_files, desc = "[F]ind [G]it-tracked file" },
         { "<leader>fc", find_command, desc = "[F]ind [C]ommand" },
-        { "<leader><space>f", find_everywhere, desc = "[F]ind everywhere" }
+        { "<leader>fr", find_lsp_references, desc = "[F]ind [R]eferences" },
+        { "<leader><space>f", find_everywhere, desc = "[F]ind everywhere" },
+        { "<C-f>", desc = "Open file browser at current directory"}
     },
     config = function()
         -- local actions = require("telescope.actions")
@@ -76,7 +83,19 @@ return {
                     theme = "ivy",
                 }
             },
+            extensions = {
+                file_browser = {
+                    cwd_to_path = true
+                },
+                fzy_native = {
+                    override_generic_sorter = false,
+                    override_file_sorter = true,
+                }
+            }
         })
---        telescope.load_extension("fzf")
+        telescope.load_extension("fzy_native")
+        telescope.load_extension("file_browser")
+        local key = vim.keymap.set
+        key("n", "<C-f>", "<cmd>Telescope file_browser path=%:p:h<CR>")
     end,
 }
