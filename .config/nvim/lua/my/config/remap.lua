@@ -24,7 +24,7 @@ key("x", "<leader>p", [["_dP]])
 key({"n", "v"}, "<leader>y", [["+y]])
 key("n", "<leader>Y", [["+Y]])
 
-key("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+key("n", "<leader><leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 key("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 
@@ -49,5 +49,9 @@ key("n", "<leader>em", "<cmd>lua require'jdtls'.extract_method(true)<CR>", { des
 key("v", "<leader>em", "<esc><cmd>lua require'jdtls'.extract_method(true)<CR>", { desc = "jdtls: [E]xtract [M]ethod" })
 
 key("n", "<A-O>", "<esc><cmd>Navbuddy<CR>", { desc = "Navigation outline" })
-key("i", "<A-O>", "<esc><cmd>Navbuddy<CR>", { desc = "Navigation outline" })
+key("n", "<A-O>", "<esc><cmd>Navbuddy<CR>", { desc = "Navigation outline" })
 
+key({"n", "x", "o"}, "<leader>s", "<Plug>(leap-forward-to)")
+key({"n", "x", "o"}, "S", "<Plug>(leap-backward-to)")
+key({"v", "o"}, "x", "<Plug>(leap-forward-till)")
+key({"v", "o"}, "X", "<Plug>(leap-backward-till)")

@@ -114,5 +114,23 @@ return {
                 }
             )
         end
-    }
+    },
+    {
+        "akinsho/bufferline.nvim",
+        version = "v3.*",
+        event = "VimEnter",
+        config = function ()
+            require("bufferline").setup{
+                options = {
+                    diagnostics = 'nvim_lsp',
+                }
+            }
+        end
+    },
+    {
+        "Fildo7525/pretty_hover",
+        config = function()
+            require("pretty_hover").setup(options)
+        end
+    },
 }
