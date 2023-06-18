@@ -56,9 +56,12 @@ return {
             severity_sort = true,
         })
 
-        require("my.config.snippets")
-
         local cmp = require("cmp")
+        cmp.setup({
+            mapping = {
+                ['<CR>'] = cmp.mapping.confirm({select = true}),
+            }
+        })
         local cmp_autopairs = require("nvim-autopairs.completion.cmp")
         cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
     end

@@ -35,6 +35,13 @@ return {
             require("mini.align").setup()
         end
     },
+    { "echasnovski/mini.splitjoin",
+        event = "BufReadPost",
+        version = '*',
+        config = function ()
+           require("mini.splitjoin").setup()
+        end
+    },
     { "Exafunction/codeium.vim",
         event = "VimEnter",
         enabled = false,
@@ -133,4 +140,11 @@ return {
             require("pretty_hover").setup(options)
         end
     },
+    {
+        "mickael-menu/zk-nvim",
+        event = "VimEnter",
+        config = function()
+            require("zk").setup({ })
+        end
+    }
 }
