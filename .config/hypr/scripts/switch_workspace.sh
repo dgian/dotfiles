@@ -10,7 +10,8 @@ else
 fi
 
 
-activemonitor=$(grep -B 10 "focused: yes" "$monitors" | awk 'NR==1 {print $2}')
+# activemonitor=$(grep -B 10 "focused: yes" "$monitors" | awk 'NR==1 {print $2}')     # with hyprland package
+activemonitor=$(grep -B 11 "focused: yes" "$monitors" | awk 'NR==1 {print $2}')     # with hyprland-nvidia-git package
 passivemonitor=$(grep  -B 6 "($workspace)" "$monitors" | awk 'NR==1 {print $2}')
 #activews=$(grep -A 2 "$activemonitor" "$monitors" | awk 'NR==3 {print $1}' RS='(' FS=')')
 passivews=$(grep -A 4 "$passivemonitor" "$monitors" | awk 'NR==4 {print $1}' RS='(' FS=')')
