@@ -4,10 +4,11 @@ This is a reference of the most commonly used keyboard/mouse shortcuts.
 
 ## Applications
 
-- `Super` + `D`               : Toggle app launcher (wofi)
-- `Super` + `Shift` + `D`     : Toggle app menu (nwg-menu)
+- `Super` + `Space`           : Toggle app launcher (wofi)
+- `Super` + `Shift` + `Space` : Toggle app menu (nwg-menu)
 - `Super` + `Enter`           : Open terminal (alacritty)
-- `Super` + `B`               : Open firefox
+- `Super` + `E`               : Open file-manager (thunar)
+- `Super` + `B`               : Open default browser (vivaldi)
 
 ## Common window actions
 
@@ -17,8 +18,6 @@ This is a reference of the most commonly used keyboard/mouse shortcuts.
 - `Super` + `K`               : Move focus to window up
 - `Super` + `J`               : Move focus to window down
 - `Super` + `V`               : Toggle floating window
-- `Super` + `P`               : Toggle pseudo (dwindle)
-- `Super` + `T`               : Toggle split (dwindle)
 - `Super` + `G`               : Toggle window group
 - `Super` + `F`               : Toggle fullscreen (virtual)
 - `Super` + `Shift` + `F`     : Toggle fullscreen (real)
@@ -32,6 +31,21 @@ This is a reference of the most commonly used keyboard/mouse shortcuts.
 - `Super` + `Shift` + `S`     : Move active window to special workspace (scratchpad)
 - `Super` + `S`               : Toggle special workspace (scratchpad)
 
+## Master layout
+
+- `Super` + `Shift` + `>` : Change orientation to right (master window to right)
+- `Super` + `Shift` + `<` : Change orientation to left (master window to left)
+- `Super` + `Shift` + `C` : Change orientation to center (master window to center)
+
+## Dwindle layout
+
+- `Super` + `T`               : Toggle split (dwindle)
+
+## Multi-monitor
+
+- `Super` + `>` : Move focus to the right monitor
+- `Super` + `<` : Move focus to the left monitor
+
 ## Mouse actions
 
 - `Super` + `Scroll down`     : Switch to next workspace
@@ -41,5 +55,6 @@ This is a reference of the most commonly used keyboard/mouse shortcuts.
 
 ## Other
 
-- `Super` + `F1` : Display this reference (requires glow)
+- `Super` + `F1`  : Display this reference (requires glow)
+- `Super` + `F10` : Toggle swayidle
 
