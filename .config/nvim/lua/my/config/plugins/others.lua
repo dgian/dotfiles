@@ -146,5 +146,56 @@ return {
         config = function()
             require("zk").setup({ })
         end
-    }
+    },
+    {
+        "stevearc/oil.nvim",
+        event = "VimEnter",
+        config = function ()
+            require("oil").setup()
+        end
+    },
+    {
+        "NeogitOrg/neogit",
+        event = "BufReadPost",
+        dependencies = "nvim-lua/plenary.nvim",
+        config = function ()
+            require("neogit").setup({
+                integrations = {
+                    diffview = true,
+                },
+            })
+        end
+    },
+    {
+        "numToStr/Comment.nvim",
+        event = "BufReadPost",
+        config = function ()
+           require("Comment").setup()
+        end,
+    },
+    {
+        "DNLHC/glance.nvim",
+        event = "BufReadPost",
+        config = function ()
+            require("glance").setup()
+        end
+    },
+    {
+        "gbprod/yanky.nvim",
+        event = "VimEnter",
+        config = function ()
+            require("yanky").setup()
+        end
+    },
+    {
+        "gbprod/substitute.nvim",
+        event = "VimEnter",
+        config = function ()
+            require("substitute").setup()
+        end
+    },
+    {
+        "filNaj/tree-setter",
+        event = "BufReadPost",
+    },
 }

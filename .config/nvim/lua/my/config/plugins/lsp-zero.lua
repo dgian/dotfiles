@@ -64,5 +64,52 @@ return {
         })
         local cmp_autopairs = require("nvim-autopairs.completion.cmp")
         cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+
+        require("luasnip.loaders.from_vscode").lazy_load()
+
+        local snippets = require("luasnip")
+        local s = snippets.snippet
+        local sn = snippets.snippet_node
+        local t = snippets.text_node
+        local i = snippets.insert_node
+        local c = snippets.choice_node
+        snippets.add_snippets("java", {
+            -- Very long example for a java class.
+            s("fn", {
+                t({ "", "" }),
+                c(1, {
+                    t("public "),
+                    t("private "),
+                }),
+                c(2, {
+                    t("void"),
+                    t("String"),
+                    t("char"),
+                    t("int"),
+                    t("double"),
+                    t("boolean"),
+                    i(nil, ""),
+                }),
+                t(" "),
+                i(3, "myFunc"),
+                t("("),
+                i(4),
+                t(")"),
+                c(5, {
+                    t(""),
+                    sn(nil, {
+                        t({ "", " throws " }),
+                        i(1),
+                    }),
+                }),
+                t({ " {", "\t" }),
+                i(0),
+                t({ "", "}" }),
+            }),
+        }, {
+            key = "java",
+        })
+        vim.api.nvim_set_keymap("i", "<C-]>", "<Plug>luasnip-next-choice", {})
+        vim.api.nvim_set_keymap("i", "<A-]>", "<Plug>luasnip-prev-choice", {})
     end
 }

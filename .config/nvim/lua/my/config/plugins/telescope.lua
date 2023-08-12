@@ -33,6 +33,7 @@ return {
     dependencies = {
         {"nvim-lua/plenary.nvim"},
         {"nvim-telescope/telescope-file-browser.nvim"},
+        {"nvim-telescope/telescope-ui-select.nvim"},
         {"nvim-telescope/telescope-fzy-native.nvim"},
     },
     keys = {
@@ -96,6 +97,7 @@ return {
         })
         telescope.load_extension("fzy_native")
         telescope.load_extension("file_browser")
+        telescope.load_extension("ui-select")
         local key = vim.keymap.set
         key("n", "<C-f>", "<cmd>Telescope file_browser path=%:p:h<CR>")
     end,

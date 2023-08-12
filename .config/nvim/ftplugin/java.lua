@@ -46,7 +46,8 @@ local config = {
     init_options = {
         bundles = bundles,
         extendedClientCapabilities = {
-            classFileContentsSupport = true
+            classFileContentsSupport = true,
+            resolveAdditionalTextEditsSupport = true
         };
     },
 

@@ -80,6 +80,10 @@ return {
                     --     },
                     -- },
                 },
+
+                tree_setter = {
+                    enable = true
+                },
             })
         end
     },
